@@ -1,0 +1,35 @@
+CREATE DATABASE 
+
+CREATE TABLE Tag (
+    id INT(11) NOT NULL,
+    nombre VARCHAR(50) NOT NULL
+
+);
+
+ALTER TABLE Tag
+  ADD PRIMARY KEY (id);
+
+ALTER TABLE Tag
+  MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
+
+CREATE TABLE Producto (
+  id INT(11) NOT NULL,
+  titulo VARCHAR(150) NOT NULL,
+  descripcion VARCHAR(255) NOT NULL,
+  precio float NOT NULL,
+  color int NOT NULL,
+  tag int NOT NULL,
+  fecha date NOT NULL,
+  imagen VARCHAR(255) NOT NULL,
+  imagen2 VARCHAR(255) NULL,
+  imagen3 VARCHAR(255) NULL,
+  sexo int,
+  CONSTRAINT fk_tag FOREIGN KEY(tag) REFERENCES Tag(id)
+);
+
+ALTER TABLE Producto
+  ADD PRIMARY KEY (id);
+
+ALTER TABLE Producto
+  MODIFY id INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT = 2;
+
